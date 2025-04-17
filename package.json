@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start" : "ts-node ./src/server.ts"
+    "start": "ts-node ./src/server.ts",
+    "dev": "nodemon src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -11,7 +12,9 @@
   "description": "",
   "dependencies": {
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
