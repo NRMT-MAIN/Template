@@ -1,12 +1,13 @@
 import { NextFunction, Request, Response } from "express";
 import { AnyZodObject } from "zod";
+import { IntervalServerError } from "../utils/Error/app.error";
 
 
 export const validateRequestBody = (schema : AnyZodObject) => {
     return async (req : Request , res : Response , next : NextFunction) => {
         try { 
             await schema.parseAsync(req.body) ; 
-            console.log("Request Body is Valid") ; 
+            console.log("Request Body is valid") ; 
             next() ; 
         } catch(err){
             res.status(400).json({
