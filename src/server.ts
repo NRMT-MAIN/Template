@@ -5,7 +5,6 @@ import { appErrorHandeler, genericErrorHandeler } from "./middleware/error.middl
 import logger from "./config/logger.config";
 import { attachCorrelationIdMiddleware } from "./middleware/correlation.middleware";
 import sequelize from "./db/models/sequelize";
-import Hotel from "./db/models/hotel";
 
 
 const app = express() ; 
@@ -24,18 +23,6 @@ app.listen(serverConfig.PORT , async () => {
     try {
         await sequelize.authenticate() ; // Test the connection to the database
         logger.info("Database Connection has been established successfully.") ; 
-
-        // const hotel = await Hotel.create({
-        //     name : "Hotel Calilo0nida" , 
-        //     address : "123 Sunset Bird" , 
-        //     location : 'Los Angeles' , 
-        //     rating : 4.5 , 
-        //     ratingCount : 100
-        // })
-
-        const hotel = await Hotel.findAll() ; 
-
-        logger.info("All Hostels" , hotel) ;
 
     } catch (error){
         console.log(error) ; 
