@@ -1,6 +1,0 @@
-{"level":"info","message":"To exit press Ctrl + C","timestamp":"04-18-2025 22:41:51","correlationId":"unknown-error-while-creating-correlation-id","data":{"hello":"hjk"}}
-{"level":"info","message":"Request Body is valid","timestamp":"04-18-2025 22:42:01","correlationId":"408410e6-f439-43a9-86fb-992ae10f543d","data":{}}
-{"level":"info","message":"Ping Handeler","timestamp":"04-18-2025 22:42:01","correlationId":"408410e6-f439-43a9-86fb-992ae10f543d","data":{}}
-{"level":"info","message":"Request Body is valid","timestamp":"04-18-2025 22:42:02","correlationId":"0311f773-a5b9-4914-8af1-a5e4e1369cbf","data":{}}
-{"level":"info","message":"Ping Handeler","timestamp":"04-18-2025 22:42:02","correlationId":"0311f773-a5b9-4914-8af1-a5e4e1369cbf","data":{}}
-{"level":"error","message":"Request Body is invalid!","timestamp":"04-18-2025 22:42:10","correlationId":"52128a80-8f98-4c1c-82c1-5b3a997f2c9f","data":{}}
