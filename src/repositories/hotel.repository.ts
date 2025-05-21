@@ -1,6 +1,6 @@
 import logger from "../config/logger.config";
 import Hotel from "../db/models/hotel";
-import { createHotelDTO } from "../dto/hotel.dto";
+import { createHotelDTO, updateHotelDTO } from "../dto/hotel.dto";
 import { NotFoundError } from "../utils/Error/app.error";
 
 export async function createHotel(hotelData: createHotelDTO){
@@ -33,4 +33,20 @@ export async function getAllHotels() {
 
     logger.info(`Hotels found: ${hotels.length}`);
     return hotels;
+}
+
+export async function deleteHotelById(id : number){
+    const hotels = await Hotel.destroy({
+        where : {
+            id
+        }
+    })
+}
+
+export async function updateHotel(id: number , hotelData : updateHotelDTO){
+    const hotel = await Hotel.update( hotelData , {
+        where : {
+            id : id
+        }
+    })
 }

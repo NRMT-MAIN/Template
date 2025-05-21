@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { createHotelService, getAllHotelsService, getHotelByIdServices } from "../services/hotel.services";
+import { createHotelService, deleteHotelService, getAllHotelsService, getHotelByIdServices, updateHotelServices } from "../services/hotel.services";
 import { StatusCodes } from "http-status-codes";
+import { NUMBER } from "sequelize";
 
 export async function createHotelHandler(req: Request, res: Response, next: NextFunction) {
     // 1. Call the service layer
@@ -46,13 +47,20 @@ export async function getAllHotelsHandler(req: Request, res: Response, next: Nex
 }
 
 export async function deleteHotelHandler(req: Request, res: Response, next: NextFunction) {
-
-    res.status(StatusCodes.NOT_IMPLEMENTED);
-    
+    const hotelResponse  = await deleteHotelService(Number(req.params.id)) ; 
+    res.status(StatusCodes.OK).json({
+        message: "Hotels Deleted successfully",
+        data: hotelResponse,
+        success: true,
+    });
 }
 
 export async function updateHotelHandler(req: Request, res: Response, next: NextFunction) {
-
-    res.status(StatusCodes.NOT_IMPLEMENTED);
+const hotelResponse  = await updateHotelServices(Number(req.params.id) , req.body) ; 
+    res.status(StatusCodes.OK).json({
+        message: "Hotels Updated successfully",
+        data: hotelResponse,
+        success: true,
+    });
     
 }
